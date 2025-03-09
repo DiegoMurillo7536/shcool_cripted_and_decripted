@@ -1,0 +1,64 @@
+
+from sql.service_queries.notes import Note
+
+
+def main():
+    """
+    It is the main function of the app that will be called when the user runs the script.
+    and depending on the user type, it will call the corresponding function.
+    """
+    
+    print("------ Welcome to the school app ------")
+    print("Please, enter who are you: ")
+    print("1. Professor")
+    print("2. Student")
+    print("3. Coordinator")
+
+    user_type = input()
+    if user_type == "1":
+        notes = Note()
+        print("Excellent, you are a professor, welcome!")
+        print("Please, what do you want to do?")
+        print("1. Insert a new note")
+        print("2. See your notes")
+        print("3. Update your personal information")
+        print("4. Exit")
+        user_action = input()
+        if user_action == "1":
+            print("Please, insert your  professor id")
+            id_profesor = input()
+            print("Please, insert the id of the student")
+            id_alumno = input()
+            print("Please, insert the note")
+            note = input()
+            print("Please, insert the comment")
+            comment = input()
+            notes.insert_note(id_profesor, id_alumno, note, comment, )
+            print("Note inserted successfully")
+        if user_action == "2":
+            print("Please, insert your  professor id")
+            id_profesor = input()
+            notes.select_all_notes_with_encrypted_notes_as_professor(id_profesor)
+        if user_action == "3":
+            print("Here you can update your personal information")
+        if user_action == "4":
+            print("Bye!  See you later!")
+    if user_type == "2":
+        print("Excellent, you are a student, welcome!")
+        print("Please, what do you want to do?")
+        print("1. See your notes")
+        print("2. Update your personal information")
+        print("3. Exit")
+    if user_type == "3":
+        print("Excellent, you are a coordinator, welcome!")
+        print("Please, what do you want to do?")
+        print("1. See all the notes")
+        print("2. Create a new student")
+        print("3. Show all the students")
+        print("3. Create a new professor")
+        print("4. Show all the professors")
+        print("5. Show all the notes")
+
+
+if __name__ == "__main__":
+    main()
