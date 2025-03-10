@@ -63,7 +63,6 @@ def main():
         print("3. Show all the students")
         print("3. Create a new professor")
         print("4. Show all the professors")
-        print("5. Show all the notes")
         user_action = input()
         if user_action == "1":
             notes.select_all_notes()
