@@ -28,6 +28,17 @@ SECRET_KEY=valor_de_la_variable
 4. En el módulo `sql/queries`.Crear el archivo `nombre_tabla.py` con las consultas que se utilizarán en el proyecto.
 5. En el módulo `sql/service_queries`.Crear el archivo `nombre_tabla.py` con las funciones que se utilizarán en el proyecto.
 6. Llamar en la función `main.py` los diferentes métodos que se utilizarán en el proyecto.
+7. Ejecutar  `python main.py` para ver el menú de opciones.
+8. Luego ejecutar los siguientes comandos de git para llevarlos al repositorio:
+
+```bash
+git add .
+git commit -m "first commit"
+git checkout -b nombre_de_la_persona
+git push -u origin nombre_de_la_persona
+```
+9. Enviar el pull request a la rama `main`.
+10. Luego de hacer el pull request, se debe hacer un merge con la rama `main`.
 
 ## Ejecución
 

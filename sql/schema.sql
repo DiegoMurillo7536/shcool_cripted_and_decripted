@@ -27,3 +27,5 @@ CREATE TABLE students (
     nationality VARCHAR(50) NOT NULL,
     blood_type VARCHAR(5) NOT NULL
 );
+ALTER TABLE notes ADD FOREIGN KEY (id_professor) REFERENCES teachers(id);
+ALTER TABLE notes ADD FOREIGN KEY (id_alumno) REFERENCES students(id);
