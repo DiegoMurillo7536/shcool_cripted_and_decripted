@@ -43,11 +43,17 @@ def main():
         if user_action == "4":
             print("Bye!  See you later!")
     if user_type == "2":
+        notes = Note()
         print("Excellent, you are a student, welcome!")
         print("Please, what do you want to do?")
         print("1. See your notes")
         print("2. Update your personal information")
         print("3. Exit")
+        user_action = input()
+        if user_action == "1":
+            print("Please, insert your  student id")
+            id_alumno = input()
+            notes.select_all_notes_with_encrypted_notes_as_student(id_alumno)
     if user_type == "3":
         print("Excellent, you are a coordinator, welcome!")
         print("Please, what do you want to do?")

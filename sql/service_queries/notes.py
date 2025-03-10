@@ -24,3 +24,9 @@ class Note:
             (id_profesor,)
         )
         return result
+    def select_all_notes_with_encrypted_notes_as_student(self, id_alumno):
+        result = connection_instance.fetchall(
+            self.queries.get("professor").get("select_all_notes_with_encrypted_notes_as_student"),
+            (id_alumno,)
+        )
+        return result
