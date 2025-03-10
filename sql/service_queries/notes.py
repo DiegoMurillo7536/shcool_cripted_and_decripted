@@ -8,9 +8,6 @@ class Note:
     def __init__(self):
         self.queries = notes_queries
     
-    def create_table(self):
-        connection_instance.execute(self.queries.get("create_table"))
-    
     def insert_note(self, id_profesor, id_alumno, nota, comentario,):
         connection_instance.execute(
             self.queries.get("professor").get("insert_note"),

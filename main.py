@@ -1,4 +1,3 @@
-
 from sql.service_queries.notes import Note
 
 
@@ -9,7 +8,7 @@ def main():
     """
     
     print("------ Welcome to the school app ------")
-    print("Please, enter who are you: ")
+    print("Please, enter who is your role:")
     print("1. Professor")
     print("2. Student")
     print("3. Coordinator")
@@ -52,7 +51,7 @@ def main():
     if user_type == "3":
         print("Excellent, you are a coordinator, welcome!")
         print("Please, what do you want to do?")
-        print("1. See all the notes")
+        print("1. Show all the notes")
         print("2. Create a new student")
         print("3. Show all the students")
         print("3. Create a new professor")

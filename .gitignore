@@ -1,1 +1,4 @@
 .env
+sql/queries/__pycache__/
+sql/service_queries/__pycache__/
+db_connection/__pycache__/
