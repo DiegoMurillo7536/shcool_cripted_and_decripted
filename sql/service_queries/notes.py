@@ -26,13 +26,13 @@ class Note:
         return result
     def select_all_notes_with_encrypted_notes_as_student(self, id_alumno):
         result = connection_instance.fetchall(
-            self.queries.get("professor").get("select_all_notes_with_encrypted_notes_as_student"),
+            self.queries.get("student").get("select_all_notes_with_encrypted_notes_as_student"),
             (id_alumno,)
         )
         return result
     def select_all_notes(self):
         result = connection_instance.fetchall(
-            self.queries.get("professor").get("select_all_notes"),
+            self.queries.get("coordinator").get("select_all_notes"),
             ()
         )
         return result
