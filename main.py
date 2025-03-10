@@ -55,6 +55,7 @@ def main():
             id_alumno = input()
             notes.select_all_notes_with_encrypted_notes_as_student(id_alumno)
     if user_type == "3":
+        notes = Note()
         print("Excellent, you are a coordinator, welcome!")
         print("Please, what do you want to do?")
         print("1. Show all the notes")
@@ -63,7 +64,9 @@ def main():
         print("3. Create a new professor")
         print("4. Show all the professors")
         print("5. Show all the notes")
-
+        user_action = input()
+        if user_action == "1":
+            notes.select_all_notes()
 
 if __name__ == "__main__":
     main()

@@ -30,3 +30,9 @@ class Note:
             (id_alumno,)
         )
         return result
+    def select_all_notes(self):
+        result = connection_instance.fetchall(
+            self.queries.get("professor").get("select_all_notes"),
+            ()
+        )
+        return result

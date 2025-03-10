@@ -24,6 +24,16 @@ notes_queries = {
                 PGP_SYM_DECRYPT(comentario::bytea, '{secret}') AS comentario_decriptado
             FROM notas
             WHERE id_alumno = %s::integer;
+            """,
+        "select_all_notes":
+            f"""
+            SELECT
+                id,
+                PGP_SYM_DECRYPT(nota, 'secret') AS nota_decriptada,
+                PGP_SYM_DECRYPT(comentario, 'secret') AS comentario_decriptado,
+                id_profesor,
+                id_alumno
+            FROM notas;
             """
     }
 }
