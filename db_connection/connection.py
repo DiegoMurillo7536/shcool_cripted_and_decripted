@@ -7,7 +7,9 @@ load_dotenv()
 db_name = os.getenv("DATABASE_NAME")
 user = os.getenv("USER_POSTRES_NAME")
 password = os.getenv("USER_POSTRES_PASSWORD")
-
+print(db_name)
+print(user)
+print(password)
 
 class Connection:
     def __init__(self):
