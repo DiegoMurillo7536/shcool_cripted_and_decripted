@@ -1,5 +1,6 @@
 from sql.service_queries.notes import Note
 from sql.service_queries.students import Student
+from sql.service_queries.teachers import Teacher
 
 def main():
     """
@@ -39,7 +40,21 @@ def main():
             id_profesor = input()
             notes.select_all_notes_with_encrypted_notes_as_professor(id_profesor)
         if user_action == "3":
-            print("Here you can update your personal information")
+            teacher = Teacher()
+            professor_id = input("Please insert your teacher id:")
+            document_number = input("Please insert your document number:")
+            full_name =input("Please insert your full name:")
+            age = input("Please insert your age:")
+            email = input("Please insert your email:")
+            residence_address = input("Please insert your residence address:")
+            teacher.update_personal_information(
+                document_number=document_number,
+                email=email,
+                full_name=full_name,
+                professor_id=professor_id,
+                residence_address=residence_address
+            )
+            print("Your data was succesfully updated")
         if user_action == "4":
             print("Bye!  See you later!")
     if user_type == "2":
@@ -72,13 +87,14 @@ def main():
     if user_type == "3":
         notes = Note()
         students = Student()
+        teacher = Teacher()
         print("Excellent, you are a coordinator, welcome!")
         print("Please, what do you want to do?")
         print("1. Show all the notes")
         print("2. Create a new student")
         print("3. Show student by id")
-        print("3. Create a new professor")
-        print("4. Show student by id")
+        print("4. Create a new professor")
+        print("5. Show professor by id")
         user_action = input()
         if user_action == "1":
             notes.select_all_notes()
@@ -99,11 +115,34 @@ def main():
             print("Please, insert blood type")
             blood_type = input()
             students.create_new_student(document_number, full_name, email, age, residence_address, nationality, blood_type)
-            print("Your personal information has been created")
+            print("Student has been created")
         if user_action == "3":
             print("Please, show student by id")
             student_id = input()
             students.view_student_by_id(student_id)
+        if user_action == "4":
+            print("Please, create new teacher")
+            print("Please, insert document number")
+            document_number = input()
+            print("Please, insert full name")
+            full_name = input()
+            print("Please, insert email")
+            email = input()
+            print("Please, insert age")
+            age = input()
+            print("Please, insert your residence address")
+            residence_address = input()
+            print("Please, insert nationality")
+            nationality = input()
+            print("Please, insert blood type")
+            blood_type = input()
+            teacher.create_new_professor(document_number, full_name, email, age, residence_address, nationality, blood_type)
+            print("Teacher has been created")
+        if user_action == "5":
+            print("Please, show teacher by id")
+            teacher_id = input("Please insert the proffesor id to search")
+            teacher.view_professor_by_id(teacher_id)
+        
 
 if __name__ == "__main__":
     main()
